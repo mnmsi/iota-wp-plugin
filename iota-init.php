@@ -26,14 +26,27 @@ require 'vendor/autoload.php';
 //require_once 'src/Assets.php';
 
 use App\Assets;
-
+use App\RegisterWidget;
+use App\ThemeSupport;
 if (class_exists('App\Assets')) {
     $assets = new Assets();
+    register_activation_hook(__FILE__, array($assets, 'activate'));
+    register_deactivation_hook(__FILE__, array($assets, 'deactivate'));
 
 }
 
-register_activation_hook(__FILE__, array($assets, 'activate'));
-register_deactivation_hook(__FILE__, array($assets, 'deactivate'));
+if(class_exists('App\RegisterWidget')){
+    $widgets = new RegisterWidget();
+    register_activation_hook(__FILE__, array($widgets, 'activate'));
+    register_deactivation_hook(__FILE__, array($widgets, 'deactivate'));
+}
+
+if(class_exists('App\ThemeSupport')){
+	$themeSupport = new ThemeSupport();
+	register_activation_hook(__FILE__, array($themeSupport, 'activate'));
+	register_deactivation_hook(__FILE__, array($themeSupport, 'deactivate'));
+}
+
 
 /**
  * initialize code star framework
