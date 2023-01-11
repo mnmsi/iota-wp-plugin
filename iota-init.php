@@ -119,6 +119,10 @@ if ( class_exists( 'CSF' ) ) {
 		),
 	) );
 
+    CSF::createSection($prefix,array(
+        
+    ));
+
 	/**
 	 * Footer
 	 * @package iota init
@@ -192,7 +196,7 @@ if ( class_exists( 'CSF' ) ) {
 				'fields' => array(
 					array(
 						'id'    => 'social_icon',
-						'type'  => 'icon',
+						'type'  => 'media',
 						'title' => 'Social Icon',
 					),
 					array(
