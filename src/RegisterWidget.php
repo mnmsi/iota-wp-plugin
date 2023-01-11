@@ -7,13 +7,14 @@ class RegisterWidget{
 	}
 	public function iota_init_widgets(){
 		register_sidebar(array(
-			'name' => 'Footer Widget',
-			'id' => 'footer_widget',
-			'description' => 'Footer Widget',
+			'name' => __('Footer Menus','iota_init'),
+			'id' => 'footer_menu',
+			'description' => 'Footer Menus',
 			'before_widget' => '<div class="col-md-3">',
 			'after_widget' => '</div>',
 			'before_title' => '<h3>',
 			'after_title' => '</h3>',
 		));
+	
 	}
 }

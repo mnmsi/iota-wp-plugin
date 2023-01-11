@@ -14,9 +14,5 @@ class ThemeSupport{
 		add_theme_support('automatic-feed-links');
 		add_theme_support('html5', array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption'));
 		add_theme_support('post-formats', array('aside', 'image', 'video', 'quote', 'link', 'gallery', 'audio'));
-		add_theme_support('woocommerce');
-		add_theme_support('wc-product-gallery-zoom');
-		add_theme_support('wc-product-gallery-lightbox');
-		add_theme_support('wc-product-gallery-slider');
 	}
 }
