@@ -93,6 +93,11 @@ if ( class_exists( 'CSF' ) ) {
 		'id'    => 'home_page',
 		'title' => 'Home Page',
 	) );
+	/**
+	 * Hero Section
+	 * @package iota init
+	 * @subpackage home page
+	 */
 	CSF::createSection( $prefix, array(
 		'parent' => 'home_page',
 		'title'  => 'Hero Section',
@@ -119,9 +124,72 @@ if ( class_exists( 'CSF' ) ) {
 		),
 	) );
 
-    CSF::createSection($prefix,array(
-        
-    ));
+	/**
+	 * Company Section
+	 * @package iota init
+	 * @subpackage home page
+	 */
+
+	CSF::createSection( $prefix, array(
+		'parent' => 'home_page',
+		'title'  => 'Company Section',
+		'fields' => array(
+			array(
+				'id'    => 'content',
+				'type'  => 'textarea',
+				'title' => 'Company Content',
+			)
+		)
+	) );
+
+	/**
+	 * Comapny information
+	 * @package iota init
+	 * @subpackage home page
+	 */
+
+	CSF::createSection( $prefix, array(
+		'parent' => 'home_page',
+		'title'  => 'Company Information',
+		'fields' => array(
+			array(
+				'id'      => 'year',
+				'type'    => 'text',
+				'title'   => 'Year of Established',
+				'default' => '2013',
+			),
+			array(
+				'id'      => 'size',
+				'type'    => 'text',
+				'title'   => 'Factory Size',
+				'default' => '23,000',
+			),
+			array(
+				'id'      => 'employee',
+				'type'    => 'text',
+				'title'   => 'Employees',
+				'default' => '100',
+			),
+			array(
+				'id'      => 'capacity',
+				'type'    => 'text',
+				'title'   => 'Annual Capacity',
+				'default' => '24,000',
+			),
+			array(
+				'id'      => 'sales',
+				'type'    => 'text',
+				'title'   => 'Annual Sales',
+				'default' => '80',
+			),
+			array(
+				'id'      => 'press',
+				'type'    => 'text',
+				'title'   => 'Press Lines',
+				'default' => '7',
+			),
+		)
+	) );
 
 	/**
 	 * Footer
