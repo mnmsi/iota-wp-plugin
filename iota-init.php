@@ -143,7 +143,7 @@ if ( class_exists( 'CSF' ) ) {
 	) );
 
 	/**
-	 * Comapny information
+	 * Company information
 	 * @package iota init
 	 * @subpackage home page
 	 */
@@ -191,6 +191,107 @@ if ( class_exists( 'CSF' ) ) {
 		)
 	) );
 
+
+
+	/**
+	 * Choice Us Section
+	 * @package iota init
+	 * @subpackage home page
+	 */
+
+	CSF::createSection( $prefix, array(
+		'parent' => 'home_page',
+		'id'     => 'choice_us',
+		'title'  => 'Choice Us Section',
+		'fields' => array(
+			array(
+				'id'      => 'quality_maintenance_title',
+				'type'    => 'text',
+				'title'   => 'Quality Maintenance Title',
+				'default' => 'Quality Maintenance',
+			),
+			array(
+				'id'      => 'quality_maintenance_content',
+				'type'    => 'textarea',
+				'title'   => 'Quality Maintenance Content',
+				'default' => 'Providing quality products is one of the three key pillars that we pride ourselves upon at Aluminium. We only believe in one key check point and that is the final "OKAY" and thumbs up given by our customers.',
+			),
+			array(
+				'id'    => 'quality_maintenance_image',
+				'type'  => 'media',
+				'title' => 'Quality Maintenance Image',
+			),
+			array(
+				'id'      => 'social_maintenance_title',
+				'type'    => 'text',
+				'title'   => 'Social Responsibility Title',
+				'default' => 'Quality Maintenance',
+			),
+			array(
+				'id'      => 'social_maintenance_content',
+				'type'    => 'textarea',
+				'title'   => 'Social Responsibility Content',
+				'default' => 'Providing quality products is one of the three key pillars that we pride ourselves upon at Aluminium. We only believe in one key check point and that is the final "OKAY" and thumbs up given by our customers.',
+			),
+			array(
+				'id'    => 'social_maintenance_image',
+				'type'  => 'media',
+				'title' => 'Social Responsibility Image',
+			),
+		),
+	) );
+	/**
+	 * download pdf Section
+	 * @package iota init
+	 * @subpackage home page
+	 */
+
+	CSF::createSection( $prefix, array(
+		'parent' => 'home_page',
+		'title'  => 'Download PDF Section',
+		'fields' => array(
+			array(
+				'id'       => 'pdf_title',
+				'type'     => 'text',
+				'title'    => 'PDF Title',
+				'default'  => 'Together, Innovating Aluminium to Make Modern Life Possible.',
+			),
+			array(
+				'id'           => 'pdf_image',
+				'type'         => 'media',
+				'title'        => 'PDF Image',
+				'library'      => 'image',
+				'button_title' => 'Upload Image',
+				'library'      => 'image',
+				'button_title' => 'Upload Image',
+			),
+			array(
+				'id'       => 'pdf_content',
+				'type'     => 'text',
+				'title'    => 'PDF Link',
+				'default'  => 'http://experiment.test/wp-content/uploads/2023/01/Legable-Wordpress.pdf',
+			),
+		)
+	) );
+
+	/**
+	 * Gallery Section
+	 * @package iota init
+	 * @subpackage home page
+	 */
+
+	CSF::createSection( $prefix, array(
+		'parent' => 'home_page',
+		'title'  => 'Gallery Section',
+		'fields' => array(
+			array(
+				'id'      => 'gallery_image',
+				'type'    => 'gallery',
+				'title'   => 'Gallery Image',
+			),
+		)
+	) );
+
 	/**
 	 * Footer
 	 * @package iota init
@@ -200,6 +301,8 @@ if ( class_exists( 'CSF' ) ) {
 		'id'    => 'footer',
 		'title' => 'Footer',
 	) );
+
+
 	CSF::createSection( $prefix, array(
 		'parent' => 'footer',
 		'title'  => 'Office Address',
@@ -272,6 +375,61 @@ if ( class_exists( 'CSF' ) ) {
 						'type'  => 'text',
 						'title' => 'Social Link',
 					),
+				)
+			)
+		)
+	) );
+
+
+	/**
+	 * Products
+	 * @package iota init
+	 */
+
+	CSF::createSection( $prefix, array(
+		'id'    => 'products',
+		'title' => 'Products',
+	) );
+
+	CSF::createSection( $prefix, array(
+		'parent' => 'products',
+		'title'  => 'Products',
+		'fields' => array(
+			array(
+				'id'           => 'products',
+				'type'         => 'repeater',
+				'title'        => '',
+				'button_title' => 'Add New Category',
+				'max'          => 5,
+				'fields'       => array(
+					array(
+						'id'    => 'category',
+						'type'  => 'text',
+						'title' => 'Category',
+					),
+					array(
+						'id'           => 'category_products',
+						'type'         => 'repeater',
+						'title'        => 'Products',
+						'button_title' => 'Add New Product',
+						'fields'       => array(
+							array(
+								'id'    => 'product_image',
+								'type'  => 'media',
+								'title' => 'Product Image',
+							),
+							array(
+								'id'    => 'product_name',
+								'type'  => 'text',
+								'title' => 'Product Name',
+							),
+							array(
+								'id'    => 'product_description',
+								'type'  => 'textarea',
+								'title' => 'Product Description',
+							),
+						)
+					)
 				)
 			)
 		)
