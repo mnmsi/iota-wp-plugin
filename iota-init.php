@@ -28,6 +28,13 @@ require 'vendor/autoload.php';
 use App\Assets;
 use App\RegisterWidget;
 use App\ThemeSupport;
+use App\DisableUpdate;
+
+if ( class_exists( 'App\DisableUpdate' ) ) {
+	$disableUpdate = new DisableUpdate();
+	register_activation_hook( __FILE__, array( $disableUpdate, 'activate' ) );
+	register_deactivation_hook( __FILE__, array( $disableUpdate, 'deactivate' ) );
+}
 
 if ( class_exists( 'App\Assets' ) ) {
 	$assets = new Assets();
