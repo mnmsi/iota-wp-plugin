@@ -281,12 +281,31 @@ if ( class_exists( 'CSF' ) ) {
 		)
 	) );
 
+	
+	
+	 /**
+	  * Certificate Section
+	  * @package iota init
+	  * @subpackage home page
+	  */
+
+	  CSF::createSection( $prefix, array(
+		'parent' => 'home_page',
+		'title'  => 'Certificate Section',
+		'fields' => array(
+			array(
+				'id'      => 'certificate_image',
+				'type'    => 'media',
+				'library' => 'image',
+				'title'   => 'Certificate Image',
+			),
+	  )
+	) );
 	/**
 	 * Gallery Section
 	 * @package iota init
 	 * @subpackage home page
 	 */
-
 	CSF::createSection( $prefix, array(
 		'parent' => 'home_page',
 		'title'  => 'Gallery Section',
@@ -298,7 +317,7 @@ if ( class_exists( 'CSF' ) ) {
 			),
 		)
 	) );
-
+	
 	/**
 	 * Footer
 	 * @package iota init
@@ -453,20 +472,49 @@ if ( class_exists( 'CSF' ) ) {
 	) );
 	CSF::createSection( $prefix, array(
 		'parent' => 'about_page',
-		'title'  => 'About Section',
+		'title'  => 'Breadcrumb',
 		'fields' => array(
 			array(
-				'id'      => 'about_title',
-				'type'    => 'text',
-				'title'   => 'About Title',
-				'default' => 'IOTA',
-			),
-			array(
-				'id'      => 'about_subtitle',
-				'type'    => 'text',
-				'title'   => 'About Subtitle',
-				'default' => 'IOTA',
+				'id'      => 'about_breadcrumb_banner_image',
+				'type'    => 'media',
+				'library'      => 'image',
+				'title'   => 'Breadcrumb Banner Image',
 			),
 		),
 	) );
+
+	// brief history
+	CSF::createSection($prefix, array(
+		'parent' => 'about_page',
+		'title' => 'Brief History',
+		'fields' => array(
+			array(
+				'id' => 'brief_history_title',
+				'type' => 'text',
+				'title' => 'Title',
+			),
+			array(
+				'id' => 'brief_history_description',
+				'type' => 'textarea',
+				'title' => 'Description',
+			),
+			array(
+				'id' => 'brief_history_year',
+				'type' => 'text',
+				'title' => 'Years of experience',
+			),
+			array(
+				'id' => 'brief_history_image',
+				'type' => 'media',
+				'library' => 'image',
+				'title' => 'Image',
+			),
+		)
+	));
+
+	// change contact form 7 water mark for select menu
+	// add_filter( 'wpcf7_form_elements', function ( $content ) {
+	// 	$content = preg_replace( '/<label for="your-subject">Subject<\/label>/', '<label for="your-subject">Select Subject</label>', $content );
+	// 	return $content;
+	// } );
 }
