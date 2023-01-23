@@ -199,7 +199,6 @@ if ( class_exists( 'CSF' ) ) {
 	) );
 
 
-
 	/**
 	 * Choice Us Section
 	 * @package iota init
@@ -258,10 +257,10 @@ if ( class_exists( 'CSF' ) ) {
 		'title'  => 'Download PDF Section',
 		'fields' => array(
 			array(
-				'id'       => 'pdf_title',
-				'type'     => 'text',
-				'title'    => 'PDF Title',
-				'default'  => 'Together, Innovating Aluminium to Make Modern Life Possible.',
+				'id'      => 'pdf_title',
+				'type'    => 'text',
+				'title'   => 'PDF Title',
+				'default' => 'Together, Innovating Aluminium to Make Modern Life Possible.',
 			),
 			array(
 				'id'           => 'pdf_image',
@@ -269,27 +268,24 @@ if ( class_exists( 'CSF' ) ) {
 				'title'        => 'PDF Image',
 				'library'      => 'image',
 				'button_title' => 'Upload Image',
-				'library'      => 'image',
-				'button_title' => 'Upload Image',
 			),
 			array(
-				'id'       => 'pdf_content',
-				'type'     => 'text',
-				'title'    => 'PDF Link',
-				'default'  => 'http://experiment.test/wp-content/uploads/2023/01/Legable-Wordpress.pdf',
+				'id'      => 'pdf_content',
+				'type'    => 'text',
+				'title'   => 'PDF Link',
+				'default' => 'http://experiment.test/wp-content/uploads/2023/01/Legable-Wordpress.pdf',
 			),
 		)
 	) );
 
-	
-	
-	 /**
-	  * Certificate Section
-	  * @package iota init
-	  * @subpackage home page
-	  */
 
-	  CSF::createSection( $prefix, array(
+	/**
+	 * Certificate Section
+	 * @package iota init
+	 * @subpackage home page
+	 */
+
+	CSF::createSection( $prefix, array(
 		'parent' => 'home_page',
 		'title'  => 'Certificate Section',
 		'fields' => array(
@@ -299,7 +295,7 @@ if ( class_exists( 'CSF' ) ) {
 				'library' => 'image',
 				'title'   => 'Certificate Image',
 			),
-	  )
+		)
 	) );
 	/**
 	 * Gallery Section
@@ -311,13 +307,13 @@ if ( class_exists( 'CSF' ) ) {
 		'title'  => 'Gallery Section',
 		'fields' => array(
 			array(
-				'id'      => 'gallery_image',
-				'type'    => 'gallery',
-				'title'   => 'Gallery Image',
+				'id'    => 'gallery_image',
+				'type'  => 'gallery',
+				'title' => 'Gallery Image',
 			),
 		)
 	) );
-	
+
 	/**
 	 * Footer
 	 * @package iota init
@@ -477,44 +473,198 @@ if ( class_exists( 'CSF' ) ) {
 			array(
 				'id'      => 'about_breadcrumb_banner_image',
 				'type'    => 'media',
-				'library'      => 'image',
+				'library' => 'image',
 				'title'   => 'Breadcrumb Banner Image',
 			),
 		),
 	) );
 
 	// brief history
-	CSF::createSection($prefix, array(
+	CSF::createSection( $prefix, array(
 		'parent' => 'about_page',
-		'title' => 'Brief History',
+		'title'  => 'Brief History',
 		'fields' => array(
 			array(
-				'id' => 'brief_history_title',
-				'type' => 'text',
+				'id'    => 'brief_history_title',
+				'type'  => 'text',
 				'title' => 'Title',
 			),
 			array(
-				'id' => 'brief_history_description',
-				'type' => 'textarea',
+				'id'    => 'brief_history_description',
+				'type'  => 'textarea',
 				'title' => 'Description',
 			),
 			array(
-				'id' => 'brief_history_year',
-				'type' => 'text',
+				'id'    => 'brief_history_year',
+				'type'  => 'text',
 				'title' => 'Years of experience',
 			),
 			array(
-				'id' => 'brief_history_image',
-				'type' => 'media',
+				'id'      => 'brief_history_image',
+				'type'    => 'media',
 				'library' => 'image',
-				'title' => 'Image',
+				'title'   => 'Image',
 			),
 		)
-	));
+	) );
 
-	// change contact form 7 water mark for select menu
-	// add_filter( 'wpcf7_form_elements', function ( $content ) {
-	// 	$content = preg_replace( '/<label for="your-subject">Subject<\/label>/', '<label for="your-subject">Select Subject</label>', $content );
-	// 	return $content;
-	// } );
+//	mission
+	CSF::createSection( $prefix, array(
+		'parent' => 'about_page',
+		'title'  => 'Mission',
+		'fields' => array(
+			array(
+				'id'    => 'mission_content',
+				'type'  => 'textarea',
+				'title' => 'Content',
+			)
+		)
+	) );
+//	vision
+	CSF::createSection( $prefix, array(
+		'parent' => 'about_page',
+		'title'  => 'Vision',
+		'fields' => array(
+			array(
+				'id'    => 'vision_content',
+				'type'  => 'textarea',
+				'title' => 'Content',
+			)
+		)
+	) );
+//	values
+	CSF::createSection( $prefix, array(
+		'parent' => 'about_page',
+		'title'  => 'Values',
+		'fields' => array(
+			array(
+				'id'    => 'values_content',
+				'type'  => 'textarea',
+				'title' => 'Content',
+			)
+		)
+	) );
+
+//	industry tour gallery
+	CSF::createSection( $prefix, array(
+		'parent' => 'about_page',
+		'title'  => 'Industry Tour Gallery',
+		'fields' => array(
+			array(
+				'id'    => 'industry_tour_gallery',
+				'type'  => 'gallery',
+				'title' => 'Images',
+			)
+		)
+	) );
+
+	/**
+	 * Products Page
+	 * @package iota init
+	 */
+
+	CSF::createSection( $prefix, array(
+		'id'    => 'products_page',
+		'title' => 'Products Page',
+	) );
+
+//	products page banner
+	CSF::createSection( $prefix, array(
+		'parent' => 'products_page',
+		'title'  => 'Banner',
+		'fields' => array(
+			array(
+				'id'      => 'products_page_banner_image',
+				'type'    => 'media',
+				'library' => 'image',
+				'title'   => 'Banner Image',
+			),
+		),
+	) );
+	/**
+	 * Event Page
+	 * @package iota init
+	 */
+
+//event page banner
+	CSF::createSection( $prefix, array(
+		'id'    => 'events_page',
+		'title' => 'Event Page',
+	) );
+//	event page banner
+	CSF::createSection( $prefix, array(
+		'parent' => 'events_page',
+		'title'  => 'Banner',
+		'fields' => array(
+			array(
+				'id'      => 'events_page_banner_image',
+				'type'    => 'media',
+				'library' => 'image',
+				'title'   => 'Banner Image',
+			),
+		),
+	) );
+
+	/**
+	 * Services Page
+	 * @package iota init
+	 */
+
+	CSF::createSection( $prefix, array(
+		'id'    => 'services_page',
+		'title' => 'Services Page',
+	) );
+
+//	services page banner
+	CSF::createSection( $prefix, array(
+		'parent' => 'services_page',
+		'title'  => 'Banner',
+		'fields' => array(
+			array(
+				'id'      => 'services_page_banner_image',
+				'type'    => 'media',
+				'library' => 'image',
+				'title'   => 'Banner Image',
+			),
+		),
+	) );
+//	our goal
+	CSF::createSection( $prefix, array(
+		'parent' => 'services_page',
+		'title'  => 'Our Goal',
+		'fields' => array(
+			array(
+				'id'       => 'our_goal_title',
+				'type'     => 'text',
+				'title'    => 'Title',
+				'validate' => 'required',
+
+			),
+			array(
+				'id'       => 'our_goal_description',
+				'type'     => 'textarea',
+				'title'    => 'Description',
+				'validate' => 'required',
+			),
+			array(
+				'id'       => 'our_goal_image',
+				'type'     => 'media',
+				'library'  => 'image',
+				'title'    => 'Image',
+				'validate' => '',
+			),
+		)
+	) );
+
+	/**
+	 * Contact Page
+	 * @package iota init
+	 */
+
+	CSF::createSection( $prefix, array(
+		'id'    => 'contact_page',
+		'title' => 'Contact Page',
+	) );
+
+
 }
