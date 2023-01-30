@@ -109,5 +109,5 @@ jQuery(document).ready(function ($) {
             }
         ]
     })
-    $(".slick-track").css("max-width", $(window).width());
+    // $(".slick-track").css("max-width", $(window).width());
 });
