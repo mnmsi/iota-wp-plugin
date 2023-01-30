@@ -2,7 +2,7 @@
 namespace App;
 class DisableUpdate
 {
-    public function __construct()
+    public function activate()
     {
         add_action('init', array($this, 'remove_core_updates'));
         add_filter('pre_site_transient_update_core', array($this, 'remove_core_updates'));

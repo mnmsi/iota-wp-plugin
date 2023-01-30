@@ -1,7 +1,7 @@
 <?php
 namespace App;
 class RegisterWidget{
-	public function __construct()
+	public function activate()
 	{
 		add_action('widgets_init', array($this, 'iota_init_widgets'));
 	}

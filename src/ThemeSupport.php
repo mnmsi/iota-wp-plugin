@@ -1,7 +1,7 @@
 <?php
 namespace App;
 class ThemeSupport{
-	public function __construct()
+	public function activate()
 	{
 		add_action('after_setup_theme', array($this, 'iota_init_theme_support'));
 	}
